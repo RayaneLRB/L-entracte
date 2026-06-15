@@ -1,0 +1,553 @@
+import type { SiteData } from '../types';
+
+// Generate unique IDs
+const uid = () => Math.random().toString(36).substr(2, 9);
+
+export const defaultImages = {
+  hero: 'https://images.pexels.com/photos/11196769/pexels-photo-11196769.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1920',
+  heroAlt: 'https://images.pexels.com/photos/33798952/pexels-photo-33798952.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1920',
+  rooftop: 'https://images.pexels.com/photos/37844216/pexels-photo-37844216.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  terrace: 'https://images.pexels.com/photos/14262609/pexels-photo-14262609.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  nightCity: 'https://images.pexels.com/photos/14471525/pexels-photo-14471525.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  interior1: 'https://images.pexels.com/photos/34429977/pexels-photo-34429977.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  interior2: 'https://images.pexels.com/photos/29000038/pexels-photo-29000038.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  interior3: 'https://images.pexels.com/photos/29000037/pexels-photo-29000037.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  interiorLighting: 'https://images.pexels.com/photos/35326200/pexels-photo-35326200.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  tableSetup: 'https://images.pexels.com/photos/27138849/pexels-photo-27138849.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  entreesChaudes: 'https://images.pexels.com/photos/5602606/pexels-photo-5602606.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  entreesFroides: 'https://images.pexels.com/photos/27612507/pexels-photo-27612507.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  pasta: 'https://images.pexels.com/photos/33312977/pexels-photo-33312977.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  healthy: 'https://images.pexels.com/photos/9213888/pexels-photo-9213888.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  sushi: 'https://images.pexels.com/photos/37356430/pexels-photo-37356430.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  seafood: 'https://images.pexels.com/photos/566343/pexels-photo-566343.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  fish: 'https://images.pexels.com/photos/27588082/pexels-photo-27588082.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  pizza: 'https://images.pexels.com/photos/32293382/pexels-photo-32293382.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  burger: 'https://images.pexels.com/photos/11022623/pexels-photo-11022623.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  steak1: 'https://images.pexels.com/photos/18015000/pexels-photo-18015000.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  dessert1: 'https://images.pexels.com/photos/12927134/pexels-photo-12927134.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  dessert2: 'https://images.pexels.com/photos/35622247/pexels-photo-35622247.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  dessert3: 'https://images.pexels.com/photos/29683251/pexels-photo-29683251.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  cocktail1: 'https://images.pexels.com/photos/15161548/pexels-photo-15161548.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  cocktail2: 'https://images.pexels.com/photos/36189461/pexels-photo-36189461.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  cocktail3: 'https://images.pexels.com/photos/17127748/pexels-photo-17127748.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  coffee1: 'https://images.pexels.com/photos/1132586/pexels-photo-1132586.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+  brunch1: 'https://images.pexels.com/photos/1510691/pexels-photo-1510691.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+};
+
+export const defaultData: SiteData = {
+  settings: {
+    siteName: "L'ENTRACTE",
+    logo: '',
+    tagline: "L'Art de Savourer l'Instant.",
+    subtitle: "Une expérience culinaire où gastronomie, élégance et convivialité se rencontrent.",
+    location: "Draria · Alger",
+    phoneMain: "+213550222523",
+    phoneSecondary: "+213550707029",
+    email: "contact@lentracte.dz",
+    whatsappNumber: "213550222523",
+    instagramHandle: "@lentracte.dz",
+    instagramUrl: "https://www.instagram.com/lentracte.dz",
+    address: "07 Chemin Des Crêtes",
+    city: "Draria",
+    postalCode: "16050",
+    country: "Algérie",
+    googleMapsUrl: "https://maps.app.goo.gl/jR4edZx2JJX2bUUP7",
+    googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.0!2d2.993484!3d36.718876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQzJzA4LjAiTiAywrA1OSczNi41IkU!5e0!3m2!1sfr!2sdz!4v1234567890",
+    followersCount: "357K",
+    googleRating: "4.0",
+    schedule: [
+      { day: 'Samedi', hours: '10h00 – 01h00', highlight: false },
+      { day: 'Dimanche', hours: '10h00 – 01h00', highlight: false },
+      { day: 'Lundi', hours: '10h00 – 01h00', highlight: false },
+      { day: 'Mardi', hours: '10h00 – 01h00', highlight: false },
+      { day: 'Mercredi', hours: '10h00 – 01h00', highlight: false },
+      { day: 'Jeudi', hours: '10h00 – 01h00', highlight: false },
+      { day: 'Vendredi', hours: '17h00 – 01h00', highlight: true },
+    ],
+  },
+  
+  hero: {
+    backgroundImage: defaultImages.hero,
+    backgroundVideo: '',
+    useVideo: false,
+    preTitle: 'Draria · Alger',
+    mainTitle: "L'ENTRACTE",
+    tagline: "L'Art de Savourer l'Instant.",
+    subtitle: "Une expérience culinaire où gastronomie, élégance et convivialité se rencontrent.",
+  },
+  
+  about: {
+    image1: defaultImages.interior1,
+    image2: defaultImages.tableSetup,
+    section1Title: "Bien Plus Qu'un",
+    section1Highlight: "Restaurant.",
+    section1Text1: "Niché au cœur de Draria, sur les hauteurs d'Alger, L'ENTRACTE s'est imposé comme une destination incontournable pour ceux qui recherchent bien plus qu'un simple repas. Ici, chaque instant est pensé pour éveiller les sens.",
+    section1Text2: "Notre philosophie repose sur trois piliers fondamentaux : l'excellence culinaire, l'art de recevoir et la création de moments inoubliables. De notre terrasse panoramique à notre salle aquarium spectaculaire, chaque espace raconte une histoire d'élégance et de raffinement.",
+    section2Title: "L'Excellence",
+    section2Highlight: "Comme Signature.",
+    section2Text1: "Chaque plat qui quitte notre cuisine est le fruit d'une passion inébranlable pour la qualité. Des produits sélectionnés avec soin, des recettes qui allient tradition et modernité, une présentation qui transforme chaque assiette en œuvre d'art.",
+    section2Text2: "L'ENTRACTE est un lieu où le temps s'arrête. Où chaque sourire de notre équipe, chaque détail de notre décor, chaque saveur de nos plats concourt à créer une expérience que l'on n'oublie pas. Un lieu de vie, un lieu de partage, un lieu d'exception.",
+  },
+  
+  menuSection: {
+    backgroundVideo: '',
+    backgroundImage: defaultImages.interior2,
+    useVideo: false,
+    title: 'Notre Menu',
+    subtitle: 'La Carte',
+    description: "Une carte généreuse et raffinée, du brunch au dîner, des sushis aux grillades — chaque plat est une invitation au voyage culinaire.",
+  },
+
+  reviewsSection: {
+    backgroundVideo: '',
+    backgroundImage: defaultImages.nightCity,
+    useVideo: false,
+  },
+  
+  images: defaultImages,
+  
+  parallaxSections: [
+    {
+      id: uid(),
+      image: defaultImages.interiorLighting,
+      quote: "Chaque détail raconte une histoire. Chaque saveur éveille une émotion. Chaque instant devient un souvenir.",
+      author: "L'ENTRACTE",
+    },
+    {
+      id: uid(),
+      image: defaultImages.heroAlt,
+      quote: "Là où la gastronomie rencontre l'art de vivre.",
+    },
+  ],
+  
+  experiences: [
+    { id: uid(), icon: 'Sun', title: 'Grillades & Viandes', description: "Entrecôte, filet de bœuf, mechoui d'agneau — des pièces nobles grillées à la perfection.", image: defaultImages.steak1 },
+    { id: uid(), icon: 'Fish', title: 'Sushi & Asiatique', description: "Rolls signature, sashimis, nouilles et poke bowls — un voyage culinaire vers l'Asie.", image: defaultImages.sushi },
+    { id: uid(), icon: 'Moon', title: 'Seafood Boil', description: "Crevettes royales, langouste, crabe — notre boil sauce signature au beurre.", image: defaultImages.seafood },
+    { id: uid(), icon: 'Cake', title: 'Sweets & Desserts', description: "Tiramisu, crème brûlée, Dubai Chocolate — chaque fin de repas est un moment de bonheur.", image: defaultImages.dessert1 },
+    { id: uid(), icon: 'Wine', title: 'Cocktails & Mojitos', description: "Le Royale, Bleu Lagoon, mojitos créatifs — des créations signature hautes en couleur.", image: defaultImages.cocktail2 },
+    { id: uid(), icon: 'Sunset', title: 'Terrasse & Rooftop', description: "Les hauteurs de Draria à vos pieds. Un panorama spectaculaire, une atmosphère unique.", image: defaultImages.rooftop },
+    { id: uid(), icon: 'Coffee', title: 'Pizza & Burgers', description: "Des pizzas artisanales et des burgers gourmets — les classiques revisités avec excellence.", image: defaultImages.pizza },
+    { id: uid(), icon: 'Users', title: 'Moments de Partage', description: "En famille ou entre amis, un cadre accueillant pour créer des souvenirs inoubliables.", image: defaultImages.interior2 },
+  ],
+  
+  gallery: [
+    { id: uid(), src: defaultImages.interior1, alt: 'Salle élégante', category: 'Intérieur' },
+    { id: uid(), src: defaultImages.sushi, alt: 'Sushi signature', category: 'Cuisine' },
+    { id: uid(), src: defaultImages.cocktail2, alt: 'Cocktail signature', category: 'Boissons' },
+    { id: uid(), src: defaultImages.rooftop, alt: 'Rooftop panoramique', category: 'Ambiance' },
+    { id: uid(), src: defaultImages.steak1, alt: 'Entrecôte premium', category: 'Cuisine' },
+    { id: uid(), src: defaultImages.dessert1, alt: 'Dessert artisanal', category: 'Desserts' },
+    { id: uid(), src: defaultImages.terrace, alt: 'Terrasse de nuit', category: 'Ambiance' },
+    { id: uid(), src: defaultImages.seafood, alt: 'Seafood Boil', category: 'Cuisine' },
+    { id: uid(), src: defaultImages.interior2, alt: 'Ambiance intérieure', category: 'Intérieur' },
+    { id: uid(), src: defaultImages.pizza, alt: 'Pizza artisanale', category: 'Cuisine' },
+    { id: uid(), src: defaultImages.coffee1, alt: 'Café latte art', category: 'Boissons' },
+    { id: uid(), src: defaultImages.dessert3, alt: 'Assortiment desserts', category: 'Desserts' },
+    { id: uid(), src: defaultImages.fish, alt: 'Poisson grillé', category: 'Cuisine' },
+    { id: uid(), src: defaultImages.cocktail3, alt: 'Gin craft', category: 'Boissons' },
+    { id: uid(), src: defaultImages.dessert2, alt: 'Gâteau signature', category: 'Desserts' },
+    { id: uid(), src: defaultImages.interior3, alt: 'Salle de réception', category: 'Intérieur' },
+  ],
+  
+  reviews: [
+    { id: uid(), name: 'Bouchra M.', rating: 5, text: "Nice terrace and helpful employees. We had a birthday party, desserts and sundaes. Everything was absolutely perfect. An unforgettable experience!", date: 'Il y a 9 mois', source: 'Google' },
+    { id: uid(), name: 'Chaima Leila M.', rating: 5, text: "I have visited this beautiful place and honestly I was blown away. Such a great service and great food. Will definitely come back again. Thank you!", date: 'Il y a 1 an', source: 'Google' },
+    { id: uid(), name: 'Sarah K.', rating: 5, text: "Beautiful and calm are the two characteristics I'd describe this restaurant. If you're looking for a place to take your family or to have a fancy date, this is it.", date: 'Il y a 6 mois', source: 'Google' },
+    { id: uid(), name: 'Amina D.', rating: 5, text: "I had dinner last night there, it was a great experience. I came from abroad to try their menu. Very helpful and welcoming staff. Food was simply great.", date: 'Il y a 1 an', source: 'Google' },
+    { id: uid(), name: 'Yassine B.', rating: 5, text: "Le cadre est exceptionnel, on se croirait dans un restaurant international de haut standing. Le nouveau design avec l'aquarium est incroyable. Un must à Alger.", date: 'Il y a 3 mois', source: 'Google' },
+    { id: uid(), name: 'Nadia R.', rating: 5, text: "L'ambiance est magique, surtout en soirée sur la terrasse. Les plats sont délicieux et la présentation est digne d'un restaurant étoilé. On y revient toujours.", date: 'Il y a 2 mois', source: 'Google' },
+  ],
+  
+  services: [
+    { id: uid(), icon: 'TreePine', title: 'Terrasse', desc: "Un espace verdoyant en plein air pour des moments de détente" },
+    { id: uid(), icon: 'Sunset', title: 'Rooftop', desc: "Vue panoramique sur les hauteurs de Draria" },
+    { id: uid(), icon: 'UtensilsCrossed', title: 'Sur Place', desc: "Salles élégantes dont notre salle aquarium exclusive" },
+    { id: uid(), icon: 'Truck', title: 'Livraison', desc: "L'excellence livrée chez vous" },
+    { id: uid(), icon: 'ShoppingBag', title: 'À Emporter', desc: "Commandez et récupérez vos plats favoris" },
+    { id: uid(), icon: 'CalendarCheck', title: 'Réservations', desc: "Réservez votre table pour une soirée inoubliable" },
+    { id: uid(), icon: 'Wifi', title: 'Wi-Fi Gratuit', desc: "Connexion haut débit pour votre confort" },
+    { id: uid(), icon: 'Car', title: 'Parking', desc: "Stationnement gratuit et sécurisé" },
+    { id: uid(), icon: 'Clock', title: 'Service Tardif', desc: "Ouvert jusqu'à 01h00, pour les noctambules" },
+    { id: uid(), icon: 'Users', title: 'Familles', desc: "Espaces adaptés aux familles avec enfants" },
+  ],
+  
+  menu: [
+    {
+      id: 'entrees-chaudes',
+      label: 'Entrées Chaudes',
+      image: defaultImages.entreesChaudes,
+      subSections: [
+        {
+          id: uid(),
+          title: '',
+          items: [
+            { id: uid(), name: 'Duo Bourek', desc: 'Poulet, viande — croustillant et doré', price: '700 DA' },
+            { id: uid(), name: 'Omelette au Choix', desc: 'Fromage ou champignons, cuisson parfaite', price: '800 DA' },
+            { id: uid(), name: 'Soupe du Jour', desc: "Préparation maison selon l'inspiration du chef", price: '800 DA' },
+            { id: uid(), name: 'Gratin de Poulet', desc: 'Fondant et gratiné, fromage filant', price: '1 000 DA' },
+            { id: uid(), name: 'Camembert Grillé', desc: 'Miel et noix, mariage sucré-salé', price: '1 100 DA' },
+            { id: uid(), name: 'Camembert Pané', desc: 'Croûte dorée, cœur fondant', price: '1 200 DA' },
+            { id: uid(), name: 'Gratin de Crevettes', desc: 'Crevettes gratinées, sauce onctueuse', price: '1 200 DA' },
+            { id: uid(), name: 'Gratin Viande', desc: 'Viande hachée gratinée aux trois fromages', price: '1 100 DA' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'entrees-froides',
+      label: 'Entrées Froides',
+      image: defaultImages.entreesFroides,
+      subSections: [
+        {
+          id: uid(),
+          title: '',
+          items: [
+            { id: uid(), name: 'Tomate Mozzarella', desc: 'Tomates cœur de bœuf, mozzarella di bufala, basilic frais', price: '1 200 DA' },
+            { id: uid(), name: 'Salade César', desc: 'Poulet grillé, parmesan, croûtons, sauce César maison', price: '1 300 DA' },
+            { id: uid(), name: 'Salade de Poulpe', desc: 'Poulpe tendre, assaisonnement méditerranéen', price: '1 600 DA' },
+            { id: uid(), name: 'Burrata', desc: "Crème onctueuse, huile d'olive vierge, tomates confites", price: '1 800 DA' },
+            { id: uid(), name: 'Plateau de Fromage', desc: 'Sélection de fromages fins affinés', price: '1 800 DA' },
+            { id: uid(), name: 'Salade de la Mer', desc: 'Avocat, saumon, crevette — fraîcheur marine', price: '1 800 DA' },
+            { id: uid(), name: 'Scampi de Crevettes', desc: 'Sauce tempura légère et croustillante', price: '1 800 DA' },
+            { id: uid(), name: 'Bruschetta Saumon Avocat', desc: 'Aux agrumes, pain complet artisanal', price: '1 600 DA' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'pates',
+      label: 'Pâtes & Risotti',
+      image: defaultImages.pasta,
+      subSections: [
+        {
+          id: uid(),
+          title: 'Pâtes',
+          items: [
+            { id: uid(), name: 'Penne Arrabiata', desc: 'Sauce tomate relevée, piment, basilic', price: '1 300 DA' },
+            { id: uid(), name: 'Spaghetti Bolognaise', desc: 'Ragù de viande mijoté, parmesan', price: '1 600 DA' },
+            { id: uid(), name: 'Tagliatelles 4 Fromages', desc: 'Gorgonzola, emmental, parmesan, mozzarella', price: '1 700 DA' },
+            { id: uid(), name: 'Tagliatelles Alfredo', desc: 'Poulet, champignons, crème onctueuse', price: '1 900 DA' },
+            { id: uid(), name: 'Farfalle au Saumon Fumé', desc: 'Saumon fumé, crème citronnée, aneth', price: '2 500 DA' },
+            { id: uid(), name: 'Linguine aux Fruits de Mer', desc: 'Crevettes, moules, calamari, sauce marinara', price: '2 800 DA' },
+            { id: uid(), name: "Linguine Crevettes à l'Ail", desc: "Crevettes sautées, ail confit, huile d'olive", price: '2 600 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Risotti',
+          items: [
+            { id: uid(), name: 'Risotto aux Épinards', desc: 'Crémeux, épinards frais, parmesan', price: '1 600 DA' },
+            { id: uid(), name: 'Risotto Poulet Champignons', desc: 'Poulet tendre, champignons forestiers', price: '1 800 DA' },
+            { id: uid(), name: 'Risotto aux Crevettes', desc: 'Crevettes royales, safran, beurre', price: '2 600 DA' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'suites',
+      label: 'Viandes',
+      image: defaultImages.steak1,
+      footNote: 'Sauces supplémentaires — 300 DA : Champignons · Roquefort · Poivre · Moutarde · Fromagère',
+      subSections: [
+        {
+          id: uid(),
+          title: 'Volailles',
+          items: [
+            { id: uid(), name: 'Blanc de Poulet Grillé', desc: 'Grillé à la perfection, herbes fraîches', price: '1 600 DA' },
+            { id: uid(), name: 'Cuisse de Poulet Marinée', desc: 'Marinade aux herbes, cuisson lente', price: '1 800 DA' },
+            { id: uid(), name: 'Crispy de Poulet', desc: 'Croustillant doré, sauce gruyère fondante', price: '2 000 DA' },
+            { id: uid(), name: 'Poulet Tandoori', desc: 'Épices tandoori, yaourt, cuisson au four', price: '2 000 DA' },
+            { id: uid(), name: 'Émincé de Poulet', desc: 'Sauce champignon, crémeux et savoureux', price: '2 200 DA' },
+            { id: uid(), name: 'Ballotine de Volaille', desc: 'Farcie, sauce forestière aux cèpes', price: '2 400 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Viandes Nobles',
+          items: [
+            { id: uid(), name: 'Entrecôte Grillée', desc: 'Cuisson maîtrisée, jutosité exceptionnelle', price: '2 900 DA' },
+            { id: uid(), name: 'Trio de Brochettes', desc: 'Assortiment de viandes grillées à la braise', price: '2 900 DA' },
+            { id: uid(), name: 'Bœuf Émincé Mexicain', desc: 'Trois poivrons, épices mexicaines', price: '2 900 DA' },
+            { id: uid(), name: 'Filet de Bœuf Grillé', desc: 'Filet noble, tendreté absolue', price: '3 300 DA' },
+            { id: uid(), name: "Mechoui d'Agneau", desc: 'Agneau rôti lentement, fondant en bouche', price: '3 800 DA' },
+            { id: uid(), name: 'Côte de Bœuf', desc: "Pièce d'exception à partager", price: 'Selon poids' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'poisson',
+      label: 'Poissons',
+      image: defaultImages.fish,
+      subSections: [
+        {
+          id: uid(),
+          title: '',
+          note: 'Selon arrivage',
+          items: [
+            { id: uid(), name: 'Daurade', desc: 'Grillée entière, herbes méditerranéennes', price: '3 000 DA' },
+            { id: uid(), name: 'Loup de Mer', desc: 'Cuisson délicate, saveurs iodées', price: '3 000 DA' },
+            { id: uid(), name: 'Espadon Grillé', desc: "Steak d'espadon, grillé à la perfection", price: '3 500 DA' },
+            { id: uid(), name: 'Crevettes Royales', desc: 'Grillées ou en sauce, généreuses', price: '3 900 DA' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'seafood-boil',
+      label: 'Seafood Boil',
+      image: defaultImages.seafood,
+      footNote: 'Sauce Signature (80% beurre) +1 000 DA · Inclus : Maïs, œufs durs, pommes de terre, sauce légère',
+      subSections: [
+        {
+          id: uid(),
+          title: '',
+          note: 'Selon arrivage',
+          items: [
+            { id: uid(), name: 'Les Moules', desc: 'Cuites dans un bouillon parfumé', price: '500 DA / 100g' },
+            { id: uid(), name: 'Crabe', desc: 'Chair tendre et savoureuse', price: '800 DA / 100g' },
+            { id: uid(), name: 'Crevettes Standard', desc: 'Cuisson boil signature', price: '1 000 DA / 100g' },
+            { id: uid(), name: 'Calamari', desc: 'Tendres et délicats', price: '1 200 DA / 100g' },
+            { id: uid(), name: 'Crevettes Royales', desc: "Pièces d'exception, calibre royal", price: '1 600 DA / 100g' },
+            { id: uid(), name: 'Langouste', desc: 'Le summum du luxe marin', price: '1 700 DA / 100g' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'asiatique',
+      label: 'Asiatique',
+      image: defaultImages.sushi,
+      subSections: [
+        {
+          id: uid(),
+          title: 'Signature Rolls',
+          items: [
+            { id: uid(), name: 'Dragon Roll', desc: 'Création signature du chef', price: '2 600 DA' },
+            { id: uid(), name: 'Crazy Roll', desc: 'Saveurs audacieuses, textures contrastées', price: '2 800 DA' },
+            { id: uid(), name: 'Crazy Crunchy', desc: 'Croustillant et fondant en un bouchée', price: '2 900 DA' },
+            { id: uid(), name: 'Healthy Sushi', desc: 'Équilibre et fraîcheur', price: '3 000 DA' },
+            { id: uid(), name: 'Joy Boy Roll', desc: 'Notre roll le plus créatif', price: '3 200 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Crispy & California Rolls (8pcs)',
+          items: [
+            { id: uid(), name: 'Daurade Avocat Fromage', desc: 'Crispy ou California au choix', price: '1 700 DA' },
+            { id: uid(), name: 'Surimi Concombre Fromage', desc: 'Crispy ou California au choix', price: '1 800 DA' },
+            { id: uid(), name: 'Crevette Avocat', desc: 'Crispy ou California au choix', price: '2 300 DA' },
+            { id: uid(), name: 'Saumon Avocat', desc: 'Crispy ou California au choix', price: '2 500 DA' },
+            { id: uid(), name: 'Tiger Rolls — Crevette Saumon', desc: 'Crevette, fromage, œuf, saumon', price: '2 600 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Maki (6pcs) & Nigiri (3pcs)',
+          items: [
+            { id: uid(), name: 'Maki Fromage Concombre', desc: 'Classique et délicat', price: '900 DA' },
+            { id: uid(), name: 'Maki Surimi / Daurade', desc: 'Fraîcheur marine enroulée', price: '1 100 DA' },
+            { id: uid(), name: 'Maki Saumon', desc: 'Le grand classique japonais', price: '1 700 DA' },
+            { id: uid(), name: 'Nigiri Surimi / Daurade', desc: 'Riz vinaigré, poisson frais', price: '1 100 – 1 200 DA' },
+            { id: uid(), name: 'Nigiri Crevette / Saumon', desc: 'Pièces premium', price: '1 500 – 1 600 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Box & Combos',
+          items: [
+            { id: uid(), name: 'Box 15 pièces', desc: 'Assortiment sélectionné', price: '3 800 DA' },
+            { id: uid(), name: 'Box Prestige 33 pièces', desc: 'Pour les amateurs exigeants', price: '6 500 DA' },
+            { id: uid(), name: 'Box VIP 50 pièces', desc: "L'expérience ultime à partager", price: '9 999 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Plats Asiatiques',
+          items: [
+            { id: uid(), name: 'Nem Poulet (3pcs)', desc: 'Croustillants, farce savoureuse', price: '800 DA' },
+            { id: uid(), name: 'Nem Crevette (3pcs)', desc: 'Garniture marine parfumée', price: '1 200 DA' },
+            { id: uid(), name: 'Nouilles Poulet', desc: 'Wok de nouilles sautées au poulet', price: '1 700 DA' },
+            { id: uid(), name: 'Nouilles Bœuf', desc: 'Bœuf tendre, sauce soja, légumes', price: '1 900 DA' },
+            { id: uid(), name: 'Poulet Katsu', desc: 'Pané à la japonaise, sauce tonkatsu', price: '2 200 DA' },
+            { id: uid(), name: 'Nouilles Crevettes', desc: 'Crevettes sautées, wok fumant', price: '2 300 DA' },
+            { id: uid(), name: 'Saumon Teriyaki', desc: 'Glaçage teriyaki caramélisé', price: '3 500 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Riz façon Tokyo & Poke',
+          items: [
+            { id: uid(), name: 'Riz façon Tokyo Poulet', desc: 'Riz japonais, poulet teriyaki', price: '1 800 DA' },
+            { id: uid(), name: 'Riz façon Tokyo Bœuf', desc: 'Bœuf mariné, riz parfumé', price: '2 000 DA' },
+            { id: uid(), name: 'Riz façon Tokyo Crevette', desc: 'Crevettes sautées, sauce soja', price: '2 200 DA' },
+            { id: uid(), name: 'The Samurai Fisher', desc: 'Saumon, avocat, fromage', price: '2 700 DA' },
+            { id: uid(), name: 'Poke Bowl', desc: 'Saumon, crevette, avocat, surimi, daurade, fromage', price: '3 200 DA' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'healthy',
+      label: 'Healthy',
+      image: defaultImages.healthy,
+      subSections: [
+        {
+          id: uid(),
+          title: '',
+          items: [
+            { id: uid(), name: 'Healthy Pancakes', desc: 'Pancakes légers, sans excès', price: '700 DA' },
+            { id: uid(), name: 'Healthy Chicken', desc: 'Légumes vapeur, riz nature, poulet grillé', price: '1 500 DA' },
+            { id: uid(), name: 'Healthy Chicken Avocado', desc: 'Poulet grillé, avocat frais, crudités', price: '1 800 DA' },
+            { id: uid(), name: 'Pizza Pâte Complète', desc: 'Base pâte complète, garniture au choix', price: 'Variée' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'pizza-burgers',
+      label: 'Pizza & Burgers',
+      image: defaultImages.pizza,
+      subSections: [
+        {
+          id: uid(),
+          title: 'Pizzas Classiques',
+          items: [
+            { id: uid(), name: 'Pizza Marguerite', desc: "Tomate, mozzarella, basilic — l'originale", price: '800 DA' },
+            { id: uid(), name: 'Pizza Végétarienne', desc: 'Légumes de saison grillés', price: '900 DA' },
+            { id: uid(), name: 'Pizza Champignon', desc: 'Champignons frais, fromage filant', price: '1 000 DA' },
+            { id: uid(), name: 'Pizza Poulet Rôti Fumé', desc: 'Poulet fumé, sauce crémeuse', price: '1 000 DA' },
+            { id: uid(), name: 'Pizza 3 Fromages', desc: 'Trio de fromages fondants', price: '1 100 DA' },
+            { id: uid(), name: 'Pizza Poulet', desc: 'Poulet grillé, oignons, poivrons', price: '1 100 DA' },
+            { id: uid(), name: 'Pizza Thon', desc: 'Thon, oignons, olives', price: '1 100 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Pizzas Premium',
+          items: [
+            { id: uid(), name: 'Pizza Viande Hachée', desc: 'Viande hachée assaisonnée', price: '1 200 DA' },
+            { id: uid(), name: 'Pizza Burrata', desc: 'Burrata crémeuse, roquette, tomates', price: '1 500 DA' },
+            { id: uid(), name: 'Pizza Saumon', desc: 'Saumon fumé, crème fraîche', price: '1 600 DA' },
+            { id: uid(), name: 'Pizza 4 Saisons', desc: 'Quatre saveurs, quatre quartiers', price: '1 700 DA' },
+            { id: uid(), name: 'Pizza Fruits de Mer', desc: 'Crevettes, moules, calamari', price: '2 000 DA' },
+            { id: uid(), name: 'Pizza Avocat Saumon', desc: 'Pâte complète, avocat, saumon fumé', price: '2 200 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Burgers',
+          items: [
+            { id: uid(), name: 'Burger Poulet Pané', desc: 'Poulet croustillant, sauce signature', price: '1 000 DA' },
+            { id: uid(), name: 'Burger Américain', desc: 'Steak juteux, cheddar, pickles, sauce', price: '1 400 DA' },
+            { id: uid(), name: 'Burger Parisien', desc: 'Viande de qualité, fromage affiné, salade', price: '1 400 DA' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'drinks',
+      label: 'Boissons',
+      image: defaultImages.cocktail1,
+      subSections: [
+        {
+          id: uid(),
+          title: 'Mojitos',
+          items: [
+            { id: uid(), name: 'Mojito Classique', desc: 'Menthe fraîche, citron vert, eau pétillante', price: '700 DA' },
+            { id: uid(), name: 'Red Mojito', desc: 'Fruits rouges, menthe, fraîcheur intense', price: '800 DA' },
+            { id: uid(), name: 'Mojito Fruit de la Passion', desc: 'Exotique et rafraîchissant', price: '800 DA' },
+            { id: uid(), name: 'Mojito Fruits Rouges', desc: 'Mélange de baies, menthe', price: '800 DA' },
+            { id: uid(), name: 'Mojito Fraise', desc: 'Fraises fraîches, menthe, citron', price: '800 DA' },
+            { id: uid(), name: 'Mojito Énergétique', desc: "Boost d'énergie, menthe, agrumes", price: '900 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Cocktails Signature',
+          items: [
+            { id: uid(), name: 'Bleu Lagoon', desc: 'Citron, ananas, curaçao — bleu intense', price: '800 DA' },
+            { id: uid(), name: 'Summer Vibes', desc: 'Mangue, pêche, orange — soleil en verre', price: '800 DA' },
+            { id: uid(), name: 'Green Virgin', desc: 'Pomme, citron, kiwi — fraîcheur verte', price: '800 DA' },
+            { id: uid(), name: 'Piña Colada', desc: 'Coco, ananas — évasion tropicale', price: '800 DA' },
+            { id: uid(), name: 'Red Light', desc: 'Fruit des bois, orange — sensuel', price: '800 DA' },
+            { id: uid(), name: 'Breeze', desc: 'Melon, menthe, cerise — brise légère', price: '800 DA' },
+            { id: uid(), name: 'Le Royale', desc: 'Notre cocktail signature exclusif', price: '900 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Jus & Milkshakes',
+          items: [
+            { id: uid(), name: 'Jus Frais', desc: 'Orange · Banane · Fraise · Citron · Ananas', price: '700 DA' },
+            { id: uid(), name: 'Milkshake Nutella', desc: 'Onctueux, chocolat noisette', price: '700 DA' },
+            { id: uid(), name: 'Milkshake Banane', desc: 'Banane fraîche, lait glacé', price: '700 DA' },
+            { id: uid(), name: 'Frappé + Topping', desc: 'Frappé glacé, topping au choix', price: '800 DA' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'cafes',
+      label: 'Cafés',
+      image: defaultImages.coffee1,
+      subSections: [
+        {
+          id: uid(),
+          title: '',
+          items: [
+            { id: uid(), name: 'Canette', desc: 'Boisson gazeuse au choix', price: '200 DA' },
+            { id: uid(), name: 'Café Capsule', desc: 'Nespresso, intensité choisie', price: '300 DA' },
+            { id: uid(), name: 'Café au Lait', desc: 'Douceur lactée, café corsé', price: '300 DA' },
+            { id: uid(), name: 'Thé · Infusion · Tisane', desc: 'Sélection de thés et plantes', price: '300 DA' },
+            { id: uid(), name: 'Cappuccino', desc: 'Mousse de lait onctueuse, latte art', price: '400 DA' },
+            { id: uid(), name: 'Café Latté', desc: 'Double shot, lait vapeur', price: '400 DA' },
+            { id: uid(), name: 'Macchiato', desc: 'Espresso tacheté de mousse de lait', price: '400 DA' },
+            { id: uid(), name: 'Café Mocha', desc: 'Espresso, chocolat, lait moussé', price: '400 DA' },
+            { id: uid(), name: 'Chocolat Chaud', desc: 'Chocolat fondant, lait crémeux', price: '500 DA' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'sweets',
+      label: 'Sweets',
+      image: defaultImages.dessert2,
+      subSections: [
+        {
+          id: uid(),
+          title: 'Crêpes & Fondants',
+          items: [
+            { id: uid(), name: 'Crêpe Simple', desc: 'Classique, sucre ou chocolat', price: '400 DA' },
+            { id: uid(), name: 'Fondant Simple', desc: 'Chocolat intense, cœur coulant', price: '450 DA' },
+            { id: uid(), name: 'Crêpe Moelleuse', desc: 'Garniture généreuse, texture fondante', price: '700 DA' },
+            { id: uid(), name: 'Crêpe Croustillante', desc: 'Caramélisée, craquante et dorée', price: '700 DA' },
+            { id: uid(), name: 'Fondant avec Glace', desc: 'Chocolat fondant, boule de glace', price: '800 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Pâtisseries & Créations',
+          items: [
+            { id: uid(), name: 'Cheesecake / Pâtisserie', desc: 'Création du jour, à découvrir', price: '600 DA' },
+            { id: uid(), name: "Trompe-l'Œil Gelato", desc: "Art glacé en trompe-l'œil", price: '600 – 1 000 DA' },
+            { id: uid(), name: 'Chocolat Rose Barbe à Papa', desc: 'Spectaculaire et gourmand', price: '750 DA' },
+            { id: uid(), name: 'Chocolat Mini DXB', desc: 'Inspiration Dubai Chocolate', price: '800 DA' },
+            { id: uid(), name: 'Tiramisu', desc: 'Mascarpone, café arabica, cacao amer', price: '800 DA' },
+            { id: uid(), name: 'Crème Brûlée', desc: 'Vanille caramélisée à la flamme', price: '800 DA' },
+          ],
+        },
+        {
+          id: uid(),
+          title: 'Glacés & Frappés',
+          items: [
+            { id: uid(), name: 'Sundae avec Topping', desc: 'Glace artisanale, toppings au choix', price: '800 DA' },
+            { id: uid(), name: 'Frappé', desc: 'Glacé et crémeux', price: '800 DA' },
+            { id: uid(), name: 'Granité', desc: 'Glace pilée aux fruits, rafraîchissant', price: '800 DA' },
+          ],
+        },
+      ],
+    },
+  ],
+};
